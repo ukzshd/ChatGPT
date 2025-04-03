@@ -244,9 +244,11 @@ export class ChatGPTApi implements LLMApi {
         requestPayload["max_completion_tokens"] = 25000;
       }
       
-      if (isO3) {
-         requestPayload["reasoning_effort"] = "high";
-       }
+
+      if (options.config.model.startsWith("o3")) {
+        requestPayload["reasoning_effort"] = "high";
+      }
+
 
       // add max_tokens to vision model
       if (visionModel) {
