@@ -241,7 +241,6 @@ export class ChatGPTApi implements LLMApi {
 
       // O1 使用 max_completion_tokens 控制token数 (https://platform.openai.com/docs/guides/reasoning#controlling-costs)
       if (isO1OrO3) {
-        requestPayload["max_completion_tokens"] = modelConfig.max_tokens;
         requestPayload["max_completion_tokens"] = 25000;
       }
       
